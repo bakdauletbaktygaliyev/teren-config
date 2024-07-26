@@ -22,7 +22,8 @@ return {
 				cpp = { "clang_format" },
 				rust = { "rustfmt" },
 				go = { "gofmt" },
-				xml = { "prettierd" }
+				xml = { "prettierd" },
+				sql = { "sqlfmt" }
 			},
 			format_on_save = {
 				lsp_fallback = true,

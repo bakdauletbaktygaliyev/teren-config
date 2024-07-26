@@ -27,6 +27,7 @@ return {
 				"jsonls", -- JSON
 				"yamlls", -- YAML
 				"bashls", -- Bash
+				"sqlls",
 			},
 		}
 
@@ -50,9 +51,11 @@ return {
 		lspconfig.svelte.setup { capabilities = capabilities }
 		lspconfig.tailwindcss.setup { capabilities = capabilities }
 		lspconfig.clangd.setup { capabilities = capabilities }
+		lspconfig.emmet_ls.setup { capabilities = capabilities }
 		lspconfig.jsonls.setup { capabilities = capabilities }
 		lspconfig.yamlls.setup { capabilities = capabilities }
 		lspconfig.bashls.setup { capabilities = capabilities }
+		lspconfig.sqlls.setup { capabilities = capabilities }
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("baktygaliyev-lsp-attach", { clear = true }),

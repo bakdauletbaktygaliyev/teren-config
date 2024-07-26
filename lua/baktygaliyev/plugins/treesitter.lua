@@ -8,7 +8,7 @@ return {
                 "bash", "c", "cpp", "css", "html", "javascript", "json", "lua", "python", "rust",
                 "typescript", "yaml", "go", "java", "markdown", "markdown_inline", "xml", "scss",
                 "vue", "angular", "tsx", "tsx", "java", "vimdoc", "jsdoc", "gomod", "graphql", "cmake", "llvm",
-                "dockerfile"
+                "dockerfile", "sql", "svelte"
             },
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
