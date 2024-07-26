@@ -15,7 +15,7 @@ return {
 				html = { "prettierd" },
 				json = { "prettierd" },
 				yaml = { "prettierd" },
-				markdown = { "prettierd" },
+				markdown = { "markdownlint" },
 				graphql = { "prettierd" },
 				lua = { "stylua" },
 				c = { "clang_format" },

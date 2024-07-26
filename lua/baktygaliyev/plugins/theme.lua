@@ -32,7 +32,7 @@ return {
                 },
             })
 
-            ColorMyPencils("catppuccin")
+            ColorMyPencils("rose-pine")
         end,
     },
     {
