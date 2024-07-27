@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "catppuccin"
+    color = color or "vague"
     vim.cmd.hi("Comment gui = none")
     vim.cmd.colorscheme(color)
 
@@ -30,9 +30,10 @@ return {
                     nvimtree = true,
                     treesitter = true,
                 },
+
             })
 
-            ColorMyPencils("catppuccin")
+            ColorMyPencils()
         end,
     },
     {
@@ -101,7 +102,7 @@ return {
                 transparent = false, -- don't set background
                 style = {
                     comments = "italic",
-                    -- headings = "bold", -- markdown headings
+                    headings = "bold", -- markdown headings
                     strings = "italic",
                 },
             })
