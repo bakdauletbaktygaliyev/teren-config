@@ -1,6 +1,5 @@
 ![Editor](./screenshots/Screenshot-1.png)
 ![Split windows](./screenshots/Screenshot-2.png)
-![Fuzzy finder](./screenshots/Screenshot-3.png)
 ![Lazygit](./screenshots/Screenshot-4.png)
 
 ## Run command in terminal
