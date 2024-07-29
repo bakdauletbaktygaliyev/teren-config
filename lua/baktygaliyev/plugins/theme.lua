@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "vague"
+    color = color or "rose-pine"
     vim.cmd.hi("Comment gui = none")
     vim.cmd.colorscheme(color)
 
@@ -41,6 +41,75 @@ return {
         name = "rose-pine",
         lazy = false,
         priority = 1000,
+        config = function()
+            require("rose-pine").setup({
+                variant = "main",      -- auto, main, moon, or dawn
+                dark_variant = "main", -- main, moon, or dawn
+                dim_inactive_windows = true,
+                extend_background_behind_borders = true,
+
+                enable = {
+                    terminal = true,
+                    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+                    migrations = true,        -- Handle deprecated options automatically
+                },
+
+                styles = {
+                    bold = true,
+                    italic = false,
+                    transparency = false,
+                },
+
+                groups = {
+                    border = "muted",
+                    link = "iris",
+                    panel = "surface",
+
+                    error = "love",
+                    hint = "iris",
+                    info = "foam",
+                    note = "pine",
+                    todo = "rose",
+                    warn = "gold",
+
+                    git_add = "foam",
+                    git_change = "rose",
+                    git_delete = "love",
+                    git_dirty = "rose",
+                    git_ignore = "muted",
+                    git_merge = "iris",
+                    git_rename = "pine",
+                    git_stage = "iris",
+                    git_text = "rose",
+                    git_untracked = "subtle",
+
+                    h1 = "iris",
+                    h2 = "foam",
+                    h3 = "rose",
+                    h4 = "gold",
+                    h5 = "pine",
+                    h6 = "foam",
+                },
+
+                highlight_groups = {
+                    -- Comment = { fg = "foam" },
+                    -- VertSplit = { fg = "muted", bg = "muted" },
+                },
+
+                before_highlight = function(group, highlight, palette)
+                    -- Disable all undercurls
+                    -- if highlight.undercurl then
+                    --     highlight.undercurl = false
+                    -- end
+                    --
+                    -- Change palette colour
+                    -- if highlight.fg == palette.pine then
+                    --     highlight.fg = palette.foam
+                    -- end
+                end,
+            })
+        end
+
     },
     {
         "bluz71/vim-moonfly-colors",
@@ -66,30 +135,6 @@ return {
         config = function()
             require("neomodern").setup({
                 style = "roseprime",
-            })
-        end,
-    },
-    {
-        "2nthony/vitesse.nvim",
-        lazy = false,
-        priority = 1000,
-        dependencies = {
-            "tjdevries/colorbuddy.nvim",
-        },
-        config = function()
-            require("vitesse").setup({
-                comment_italics = true,
-                transparent_background = false,
-                transparent_float_background = false, -- aka pum(popup menu) background
-                reverse_visual = false,
-                dim_nc = false,
-                cmp_cmdline_disable_search_highlight_group = false, -- disable search highlight group for cmp item
-                -- if `transparent_float_background` false, make telescope border color same as float background
-                telescope_border_follow_float_background = false,
-                -- similar to above, but for lspsaga
-                lspsaga_border_follow_float_background = false,
-                -- diagnostic virtual text background, like error lens
-                diagnostic_virtual_text_background = false,
             })
         end,
     },
