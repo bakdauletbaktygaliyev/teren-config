@@ -3,14 +3,6 @@ return {
         "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
     },
     {
-        "MeanderingProgrammer/markdown.nvim",
-        name = "render-markdown",
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require("render-markdown").setup({})
-        end,
-    },
-    {
         "NvChad/nvim-colorizer.lua"
     },
     {
@@ -49,12 +41,4 @@ return {
         },
         event = { "BufReadPost", "BufNewFile" },
     },
-    {
-        "Love-Pengy/minintro.nvim",
-        opts = { color = "#63bda4" },
-        config = true,
-        lazy = false,
-        enabled = true,
-    },
-
 }
