@@ -1,6 +1,6 @@
 function ColorMyPencils(color)
     color = color or "rose-pine"
-    vim.cmd.hi("Comment gui = none")
+    vim.cmd("hi Comment gui=none")
     vim.cmd.colorscheme(color)
 
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -14,11 +14,11 @@ return {
         priority = 1000,
         config = function()
             require("catppuccin").setup({
-                flavour = "mocha",    -- latte, frappe, macchiato, mocha
+                flavour = "macchiato", -- latte, frappe, macchiato, mocha
                 dim_inactive = {
-                    enabled = true,   -- dims the background color of inactive window
+                    enabled = true,    -- dims the background color of inactive window
                     shade = "light",
-                    percentage = 0.2, -- percentage of the shade to apply to the inactive window
+                    percentage = 0.2,  -- percentage of the shade to apply to the inactive window
                 },
                 styles = {
                     comments = { "italic" },
@@ -191,8 +191,14 @@ return {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
     },
+    {
+        "sainnhe/gruvbox-material",
+        config = function()
+            -- vim.g.gruvbox_contrast_dark = '(hard)'
+            -- vim.g.gruvbox_contrast_light = 'hard'
+        end
+    }
 
 
 }

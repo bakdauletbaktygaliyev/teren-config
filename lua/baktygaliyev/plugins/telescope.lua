@@ -30,6 +30,17 @@ return {
 		--  - Insert mode: <c-/>
 		--  - Normal mode: ?
 		require("telescope").setup({
+			defaults = {
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						prompt_position = "bottom",
+						width = { padding = 0 },
+						height = { padding = 0 },
+						preview_width = 0.6,
+					},
+				},
+			},
 			-- You can put your default mappings / updates / etc. in here
 			--  All the info you're looking for is in `:help telescope.setup()`
 			pickers = {
