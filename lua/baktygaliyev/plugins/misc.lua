@@ -3,15 +3,10 @@ return {
         "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
     },
     {
-        "NvChad/nvim-colorizer.lua"
-    },
-    {
         "theprimeagen/vim-be-good",
-
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
-
     },
     {
         "rcarriga/nvim-notify",
@@ -29,7 +24,6 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        opts = {},
         event = { "BufReadPost", "BufNewFile" },
     },
     {

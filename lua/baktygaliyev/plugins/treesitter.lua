@@ -17,7 +17,6 @@ return {
             auto_install = true,
             highlight = {
                 enable = true, -- false will disable the whole extension
-                disable = {},  -- List of language that will be disabled
                 additional_vim_regex_highlighting = false,
             },
         })
