@@ -21,13 +21,12 @@ return {
 				"jdtls", -- Java
 				"svelte", -- Svelte
 				"tailwindcss", -- Tailwind CSS
-				-- "solargraph",    -- Ruby (if needed)
 				"clangd", -- C/C++
 				"emmet_ls", -- Emmet (for HTML/CSS)
 				"jsonls", -- JSON
 				"yamlls", -- YAML
 				"bashls", -- Bash
-				"sqlls",
+				"sqlls", -- SQL
 			},
 		}
 
