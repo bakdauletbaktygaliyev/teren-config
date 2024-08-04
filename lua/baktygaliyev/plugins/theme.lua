@@ -2,7 +2,6 @@ function ColorMyPencils(color)
     color = color or "rose-pine"
     vim.cmd("hi Comment gui=none")
     vim.cmd.colorscheme(color)
-
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
@@ -14,11 +13,11 @@ return {
         priority = 1000,
         config = function()
             require("catppuccin").setup({
-                flavour = "macchiato", -- latte, frappe, macchiato, mocha
+                flavour = "mocha",    -- latte, frappe, macchiato, mocha
                 dim_inactive = {
-                    enabled = true,    -- dims the background color of inactive window
+                    enabled = true,   -- dims the background color of inactive window
                     shade = "light",
-                    percentage = 0.2,  -- percentage of the shade to apply to the inactive window
+                    percentage = 0.2, -- percentage of the shade to apply to the inactive window
                 },
                 styles = {
                     comments = { "italic" },
@@ -135,6 +134,43 @@ return {
         config = function()
             require("neomodern").setup({
                 style = "roseprime",
+                toggle_style_key = nil,
+                toggle_style_list = {
+                    "iceclimber",
+                    "coffeecat",
+                    "darkforest",
+                    "campfire",
+                    "roseprime",
+                    "daylight"
+                },
+                transparent = false,
+                term_colors = true,
+                code_style = {
+                    comments = "italic",
+                    conditionals = "none",
+                    functions = "none",
+                    keywords = "none",
+                    headings = "bold", -- markdown headings
+                    operators = "none",
+                    keyword_return = "none",
+                    strings = "none",
+                    variables = "none",
+                },
+                ui = {
+                    colored_docstrings = true, -- if true, docstrings will be highlighted like strings, otherwise they will be highlighted like comments
+                    plain_float = false,       -- don't set background of floating windows. recommended for when using floating windows with borders
+                    show_eob = true,           -- show the end-of-buffer tildes
+
+                    lualine = {
+                        bold = true,
+                        plain = false, -- use a less distracting lualine. note: works best when no lualine separators are used
+                    },
+                    cmp = {
+                        plain = false,        -- don't highlight lsp-kind items
+                        reverse = false,      -- reverse item kind highlights in cmp menu
+                    },
+                    telescope = "borderless", -- choose between 'borderless' or 'bordered'
+                },
             })
         end,
     },
@@ -144,12 +180,33 @@ return {
         priority = 1000,
         config = function()
             require("vague").setup({
-                transparent = false, -- don't set background
-                style = {
-                    comments = "italic",
-                    headings = "bold", -- markdown headings
-                    strings = "italic",
-                },
+                require("vague").setup({
+                    transparent = false,
+                    style = {
+                        boolean = "none",
+                        number = "none",
+                        float = "none",
+                        error = "none",
+                        comments = "italic",
+                        conditionals = "none",
+                        functions = "none",
+                        headings = "bold",
+                        operators = "none",
+                        strings = "italic",
+                        variables = "none",
+                        keywords = "none",
+                        keyword_return = "none",
+                        keywords_loop = "none",
+                        keywords_label = "none",
+                        keywords_exception = "none",
+                        builtin_constants = "none",
+                        builtin_functions = "none",
+                        builtin_types = "none",
+                        builtin_variables = "none",
+                    },
+                    colors = {
+                    },
+                })
             })
         end,
     },
@@ -167,18 +224,18 @@ return {
         priority = 1000,
         config = function()
             require("monokai-pro").setup({
-                devicons = true, -- highlight the icons of `nvim-web-devicons`
+                devicons = true,
                 styles = {
                     comment = { italic = true },
-                    keyword = { italic = false },       -- any other keyword
-                    type = { italic = false },          -- (preferred) int, long, char, etc
-                    storageclass = { italic = false },  -- static, register, volatile, etc
-                    structure = { italic = false },     -- struct, union, enum, etc
-                    parameter = { italic = false },     -- parameter pass in function
+                    keyword = { italic = false },
+                    type = { italic = false },
+                    storageclass = { italic = false },
+                    structure = { italic = false },
+                    parameter = { italic = false },
                     annotation = { italic = true },
-                    tag_attribute = { italic = false }, -- attribute of tag in reactjs
+                    tag_attribute = { italic = false },
                 },
-                filter = "spectrum",                    -- classic | octagon | pro | machine | ristretto | spectrum
+                filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
             })
         end,
     },
@@ -198,7 +255,69 @@ return {
             -- vim.g.gruvbox_contrast_dark = '(hard)'
             -- vim.g.gruvbox_contrast_light = 'hard'
         end
-    }
+    },
+    {
+        "mellow-theme/mellow.nvim"
+    },
+    -- Lazy
+    {
+        "vague2k/vague.nvim",
+        config = function()
+            require("vague").setup({
+                transparent = false, -- don't set background
+                style = {
+                    -- "none" is the same thing as default. But "italic" and "bold" are also valid options
+                    boolean = "none",
+                    number = "none",
+                    float = "none",
+                    error = "none",
+                    comments = "italic",
+                    conditionals = "none",
+                    functions = "none",
+                    headings = "bold",
+                    operators = "none",
+                    strings = "italic",
+                    variables = "none",
 
+                    -- keywords
+                    keywords = "none",
+                    keyword_return = "none",
+                    keywords_loop = "none",
+                    keywords_label = "none",
+                    keywords_exception = "none",
 
+                    -- builtin
+                    builtin_constants = "none",
+                    builtin_functions = "none",
+                    builtin_types = "none",
+                    builtin_variables = "none",
+                },
+                -- Override colors
+                colors = {
+                    bg = "#18191a",
+                    fg = "#cdcdcd",
+                    floatBorder = "#878787",
+                    line = "#282830",
+                    comment = "#646477",
+                    builtin = "#bad1ce",
+                    func = "#be8c8c",
+                    string = "#deb896",
+                    number = "#d2a374",
+                    property = "#c7c7d4",
+                    constant = "#b4b4ce",
+                    parameter = "#b9a3ba",
+                    visual = "#363738",
+                    error = "#d2788c",
+                    warning = "#e6be8c",
+                    hint = "#8ca0dc",
+                    operator = "#96a3b2",
+                    keyword = "#7894ab",
+                    type = "#a1b3b9",
+                    search = "#465362",
+                    plus = "#8faf77",
+                    delta = "#e6be8c",
+                },
+            })
+        end
+    },
 }
