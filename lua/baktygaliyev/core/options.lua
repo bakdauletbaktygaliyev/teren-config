@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.background = "dark"
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -44,8 +45,8 @@ vim.opt.swapfile = false
 vim.opt.signcolumn = 'yes'
 
 -- Set scroll offset
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+vim.opt.scrolloff = 12
+vim.opt.sidescrolloff = 12
 
 -- Set tabs and indentation
 vim.opt.tabstop = 4
@@ -53,6 +54,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
+
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -70,7 +72,8 @@ vim.opt.incsearch = true
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
-vim.opt.guicursor = "" --highlight current search
+--highlight current search
+vim.opt.guicursor = ""
 
 vim.opt.backup = false
 vim.opt.writebackup = false

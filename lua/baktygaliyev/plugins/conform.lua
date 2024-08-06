@@ -3,7 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
-
 		conform.setup({
 			formatters_by_ft = {
 				javascript = { "prettierd" },
@@ -12,6 +11,7 @@ return {
 				typescriptreact = { "prettierd" },
 				svelte = { "prettierd" },
 				css = { "prettierd" },
+				scss = { "prettierd" },
 				html = { "prettierd" },
 				json = { "prettierd" },
 				yaml = { "prettierd" },
