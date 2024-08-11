@@ -20,6 +20,8 @@ vim.opt.relativenumber = true
 -- Set the cursor line
 vim.opt.cursorline = true
 
+vim.cmd [[highlight CursorLine guibg=#a8a8a8]]
+
 -- Enable mouse support
 vim.opt.mouse = 'a'
 

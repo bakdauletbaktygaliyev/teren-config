@@ -259,4 +259,7 @@ return {
     {
         "mellow-theme/mellow.nvim"
     },
+    {
+        "ayu-theme/ayu-vim"
+    }
 }
