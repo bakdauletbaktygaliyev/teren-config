@@ -83,3 +83,6 @@ vim.opt.swapfile = false
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 vim.opt.termguicolors = true
+
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
