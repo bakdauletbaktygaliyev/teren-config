@@ -22,7 +22,7 @@ return {
 				cpp = { "clang_format" },
 				rust = { "rustfmt" },
 				go = { "gofmt" },
-				xml = { "prettierd" },
+				xml = { "xmlformatter" },
 				sql = { "sqlfmt" }
 			},
 			format_on_save = {
