@@ -13,7 +13,7 @@ return {
 			ensure_installed = {
 				"pyright", -- Python
 				"rust_analyzer", -- Rust
-				"tsserver", -- TypeScript and JavaScript
+				"ts_ls", -- TypeScript and JavaScript
 				"gopls", -- Go
 				"lua_ls", -- Lua
 				"html", -- HTML
@@ -34,7 +34,7 @@ return {
 		local lspconfig = require("lspconfig")
 		lspconfig.pyright.setup { capabilities = capabilities }
 		lspconfig.rust_analyzer.setup { capabilities = capabilities }
-		lspconfig.tsserver.setup { capabilities = capabilities }
+		lspconfig.ts_ls.setup { capabilities = capabilities }
 		lspconfig.gopls.setup { capabilities = capabilities }
 		lspconfig.lua_ls.setup { capabilities = capabilities, settings = {
 			Lua = {
