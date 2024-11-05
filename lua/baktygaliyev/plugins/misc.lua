@@ -1,5 +1,11 @@
 return {
     {
+        "andrewferrier/wrapping.nvim",
+        config = function()
+            require("wrapping").setup()
+        end
+    },
+    {
         "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
     },
     {

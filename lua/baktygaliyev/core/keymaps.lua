@@ -10,6 +10,9 @@ vim.keymap.set("i", "<Right>", '<ESC>:echoe "Use l"<CR>')
 vim.keymap.set("i", "<Up>", '<ESC>:echoe "Use k"<CR>')
 vim.keymap.set("i", "<Down>", '<ESC>:echoe "Use j"<CR>')
 
+vim.keymap.set('n', '<leader>g', ':!g++-13 -std=c++20 % -o %< && ./%<<CR>', { silent = true })
+
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })

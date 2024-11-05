@@ -18,12 +18,11 @@ return {
 				markdown = { "markdownlint" },
 				graphql = { "prettierd" },
 				lua = { "stylua" },
-				c = { "clang_format" },
-				cpp = { "clang_format" },
 				rust = { "rustfmt" },
 				go = { "gofmt" },
 				xml = { "xmlformatter" },
-				sql = { "sqlfmt" }
+				sql = { "sqlfmt" },
+				cpp = { "clang_format" }
 			},
 			format_on_save = {
 				lsp_fallback = true,

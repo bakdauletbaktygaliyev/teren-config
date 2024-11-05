@@ -48,11 +48,7 @@ return {
 		lspconfig.jdtls.setup { capabilities = capabilities }
 		lspconfig.svelte.setup { capabilities = capabilities }
 		lspconfig.tailwindcss.setup { capabilities = capabilities }
-		lspconfig.clangd.setup {
-			cmd = { "clangd" },
-			filetypes = { "c", "cpp", "objc", "objcpp" },
-			root_dir = require 'lspconfig'.util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
-		}
+		lspconfig.clangd.setup { capabilities = capabilities }
 		lspconfig.emmet_ls.setup { capabilities = capabilities }
 		lspconfig.jsonls.setup { capabilities = capabilities }
 		lspconfig.yamlls.setup { capabilities = capabilities }
