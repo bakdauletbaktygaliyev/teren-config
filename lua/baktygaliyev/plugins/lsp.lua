@@ -30,6 +30,7 @@ return {
 			},
 		}
 
+
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local lspconfig = require("lspconfig")
 		lspconfig.pyright.setup { capabilities = capabilities }
@@ -45,7 +46,16 @@ return {
 		}, }
 		lspconfig.html.setup { capabilities = capabilities }
 		lspconfig.cssls.setup { capabilities = capabilities }
-		lspconfig.jdtls.setup { capabilities = capabilities }
+		lspconfig.jdtls.setup {
+			root_dir = require('lspconfig').util.root_pattern(".git", "mvnw", "gradlew"),
+			cmd = { 'jdtls', "java", },
+			settings = {
+				java = {
+					signatureHelp = { enabled = true },
+					contentProvider = { preferred = 'fernflower' }, -- Use Fernflower decompiler
+				},
+			},
+			capabilities = capabilities }
 		lspconfig.svelte.setup { capabilities = capabilities }
 		lspconfig.tailwindcss.setup { capabilities = capabilities }
 		lspconfig.clangd.setup { capabilities = capabilities }

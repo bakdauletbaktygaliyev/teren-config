@@ -22,7 +22,8 @@ return {
 				go = { "gofmt" },
 				xml = { "xmlformatter" },
 				sql = { "sqlfmt" },
-				cpp = { "clang_format" }
+				cpp = { "clang_format" },
+				java = { "google_java_format" }
 			},
 			format_on_save = {
 				lsp_fallback = true,
