@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "rose-pine"
+    color = color or "midnight"
     vim.cmd("hi Comment gui=none")
     vim.cmd.colorscheme(color)
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -7,6 +7,16 @@ function ColorMyPencils(color)
 end
 
 return {
+    {
+        "nyoom-engineering/oxocarbon.nvim"
+    },
+    {
+        "kabouzeid/nvim-jellybeans",
+        dependencies = { "rktjmp/lush.nvim" }
+    },
+    {
+        "EdenEast/nightfox.nvim"
+    },
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -42,7 +52,7 @@ return {
         priority = 1000,
         config = function()
             require("rose-pine").setup({
-                variant = "main", -- auto, main, moon, or dawn
+                variant = "moon", -- auto, main, moon, or dawn
                 -- dark_variant = "moon", -- main, moon, or dawn
                 dim_inactive_windows = true,
                 extend_background_behind_borders = true,
@@ -191,14 +201,6 @@ return {
                     },
                 })
             })
-        end,
-    },
-    {
-        "gmr458/vscode_modern_theme.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("vscode_modern").setup({})
         end,
     },
     {

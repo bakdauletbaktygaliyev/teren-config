@@ -1,5 +1,8 @@
 return {
     {
+        "rktjmp/lush.nvim"
+    },
+    {
         "andrewferrier/wrapping.nvim",
         config = function()
             require("wrapping").setup()

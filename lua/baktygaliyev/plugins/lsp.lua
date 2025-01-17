@@ -18,7 +18,6 @@ return {
 				"lua_ls", -- Lua
 				"html", -- HTML
 				"cssls", -- CSS, SCSS
-				"jdtls", -- Java
 				"svelte", -- Svelte
 				"tailwindcss", -- Tailwind CSS
 				"clangd", -- C/C++
@@ -27,6 +26,7 @@ return {
 				"yamlls", -- YAML
 				"bashls", -- Bash
 				"sqlls", -- SQL
+				"jdtls", -- Java
 			},
 		}
 
@@ -46,16 +46,6 @@ return {
 		}, }
 		lspconfig.html.setup { capabilities = capabilities }
 		lspconfig.cssls.setup { capabilities = capabilities }
-		lspconfig.jdtls.setup {
-			root_dir = require('lspconfig').util.root_pattern(".git", "mvnw", "gradlew"),
-			cmd = { 'jdtls', "java", },
-			settings = {
-				java = {
-					signatureHelp = { enabled = true },
-					contentProvider = { preferred = 'fernflower' }, -- Use Fernflower decompiler
-				},
-			},
-			capabilities = capabilities }
 		lspconfig.svelte.setup { capabilities = capabilities }
 		lspconfig.tailwindcss.setup { capabilities = capabilities }
 		lspconfig.clangd.setup { capabilities = capabilities }
