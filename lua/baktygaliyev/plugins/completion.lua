@@ -19,8 +19,7 @@ return {
             cmp.setup({
                 snippet = {
                     expand = function(args)
-                        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-                        vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+                        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                     end,
                 },
                 window = {
@@ -37,16 +36,11 @@ return {
                     ['<C-e>'] = cmp.mapping.abort(),
                 }),
                 sources = cmp.config.sources(
-                    {
-                        { name = 'nvim_lsp' },
-                        { name = 'luasnip' }, -- For luasnip users.
-                    },
-                    {
-                        { name = 'buffer' },
-                    },
-                    {
-                        { name = 'mdlink' }
-                    }
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                    { name = 'buffer' },
+                    { name = 'path' },
+                    { name = 'mdlink' }
                 )
             })
         end
